@@ -37,19 +37,19 @@ class ParkingBoyFacts {
         assertSame(firstCar, fetchedByFirstTicket);
         assertSame(secondCar, fetchedBySecondTicket);
     }
-//
-//    @Test
-//    void should_not_fetch_any_car_once_ticket_is_wrong() {
-//        ParkingLot parkingLot = new ParkingLot();
-//        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-//        Car car = new Car();
-//        ParkingTicket wrongTicket = new ParkingTicket();
-//
-//        ParkingTicket ticket = parkingBoy.park(car);
-//
-//        assertNull(parkingBoy.fetch(wrongTicket));
-//        assertSame(car, parkingBoy.fetch(ticket));
-//    }
+
+    @Test
+    void should_not_fetch_any_car_once_ticket_is_wrong() {
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Car car = new Car();
+        ParkingTicket wrongTicket = new ParkingTicket();
+
+        ParkingTicket ticket = parkingBoy.park(car);
+
+        assertNull(parkingBoy.fetch(wrongTicket));
+        assertSame(car, parkingBoy.fetch(ticket));
+    }
 //
 //    @Test
 //    void should_query_message_once_the_ticket_is_wrong() {

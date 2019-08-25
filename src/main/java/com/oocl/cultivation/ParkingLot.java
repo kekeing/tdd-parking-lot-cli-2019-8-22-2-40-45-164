@@ -26,7 +26,9 @@ public class ParkingLot {
     }
     public Car fetch(ParkingTicket ticket){
         Car car = new Car();
-        car = cars.get(ticket);
-        return car;
+        if(cars.containsKey(ticket))
+        {car = cars.get(ticket);
+        return car;}
+        else return null;
     }
 }
