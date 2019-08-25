@@ -11,6 +11,10 @@ public class ParkingBoy {
 
     public ParkingTicket park(Car car) {
         // TODO: Please implement the method
+    	if(this.parkingLot.park(car) != null)
+    	{
+    		this.lastErrorMessage = null;
+    	}
         return this.parkingLot.park(car);
 
 //        throw new RuntimeException("Not implemented");
