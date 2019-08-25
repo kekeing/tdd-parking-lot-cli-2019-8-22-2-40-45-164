@@ -18,11 +18,14 @@ public class ParkingBoy {
 
     public Car fetch(ParkingTicket ticket) {
         // TODO: Please implement the method
+        if (this.parkingLot.fetch(ticket) == null) {
+        	this.lastErrorMessage = "Unrecognized parking ticket.";
+        }
         return this.parkingLot.fetch(ticket);
-//        throw new RuntimeException("Not implemented");
+ //       throw new RuntimeException("Not implemented");
     }
 
     public String getLastErrorMessage() {
-        return lastErrorMessage;
+        return this.lastErrorMessage;
     }
 }
