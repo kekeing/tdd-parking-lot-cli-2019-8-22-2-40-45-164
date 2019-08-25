@@ -77,18 +77,18 @@ class ParkingBoyFacts {
         assertNull(parkingBoy.getLastErrorMessage());
     }
 
-//    @Test
-//    void should_not_fetch_any_car_once_ticket_is_not_provided() {
-//        ParkingLot parkingLot = new ParkingLot();
-//        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
-//        Car car = new Car();
-//
-//        ParkingTicket ticket = parkingBoy.park(car);
-//
-//        assertNull(parkingBoy.fetch(null));
-//        assertSame(car, parkingBoy.fetch(ticket));
-//    }
-//
+    @Test
+    void should_not_fetch_any_car_once_ticket_is_not_provided() {
+        ParkingLot parkingLot = new ParkingLot();
+        ParkingBoy parkingBoy = new ParkingBoy(parkingLot);
+        Car car = new Car();
+
+        ParkingTicket ticket = parkingBoy.park(car);
+
+        assertNull(parkingBoy.fetch(null));
+        assertSame(car, parkingBoy.fetch(ticket));
+    }
+
 //    @Test
 //    void should_query_message_once_ticket_is_not_provided() {
 //        ParkingLot parkingLot = new ParkingLot();
