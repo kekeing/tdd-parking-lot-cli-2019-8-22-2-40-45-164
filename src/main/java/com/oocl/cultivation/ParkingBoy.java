@@ -11,24 +11,29 @@ public class ParkingBoy {
 
     public ParkingTicket park(Car car) {
         // TODO: Please implement the method
-    	if(this.parkingLot.park(car) != null)
+    	ParkingTicket parkingTicket = this.parkingLot.park(car);
+    	
+    	if(parkingTicket != null)
     	{
     		this.lastErrorMessage = null;
     	}
-        return this.parkingLot.park(car);
+    	else this.lastErrorMessage = "The parking lot is full.";
+    	
+        return parkingTicket;
 
 //        throw new RuntimeException("Not implemented");
     }
 
     public Car fetch(ParkingTicket ticket) {
+    	Car car = this.parkingLot.fetch(ticket);
     	if(ticket == null) {
     		this.lastErrorMessage = "Please provide your parking ticket.";
     	}
         // TODO: Please implement the method
-    	else if (this.parkingLot.fetch(ticket) == null) {
+    	else if (car == null) {
         	this.lastErrorMessage = "Unrecognized parking ticket.";
         }
-        return this.parkingLot.fetch(ticket);
+        return car;
  //       throw new RuntimeException("Not implemented");
     }
 
