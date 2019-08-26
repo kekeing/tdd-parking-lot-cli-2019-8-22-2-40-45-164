@@ -21,8 +21,11 @@ public class ParkingBoy {
     }
 
     public Car fetch(ParkingTicket ticket) {
+    	if(ticket == null) {
+    		this.lastErrorMessage = "Please provide your parking ticket.";
+    	}
         // TODO: Please implement the method
-        if (this.parkingLot.fetch(ticket) == null) {
+    	else if (this.parkingLot.fetch(ticket) == null) {
         	this.lastErrorMessage = "Unrecognized parking ticket.";
         }
         return this.parkingLot.fetch(ticket);
